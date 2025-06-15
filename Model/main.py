@@ -14,7 +14,6 @@ for summoner_group in summoners:
     tagLines = summoner_group["tagLines"]
     tier = summoner_group["tier"]
     region = summoner_group["region"]
-    print(region)
     output_dir = os.path.join(os.path.dirname(__file__), f"CSVs")
     os.makedirs(output_dir, exist_ok=True)
     file_path = os.path.join(output_dir, f"{region}.csv")

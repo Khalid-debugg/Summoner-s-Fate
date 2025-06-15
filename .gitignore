@@ -1,1 +1,4 @@
 .env
+Model/CSVs/
+__pycache__/
+*.pyc
