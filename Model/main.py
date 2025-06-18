@@ -1,4 +1,5 @@
 from data_generator import generate_data
+from sklearn.model_selection import train_test_split
 import pandas as pd
 import os
 
@@ -15,3 +16,12 @@ def load_all_data():
         dfs.append(df)
     
     return pd.concat(dfs, ignore_index=True)
+
+def preprocess(df):
+    X = df.iloc[:, :-3]
+    X['tier'] = df.iloc[:, -2]
+    X['region'] = df.iloc[:, -1]
+    
+    y = df.iloc[:, -3]
+
+    return train_test_split(X, y, test_size=0.2, random_state=42)
